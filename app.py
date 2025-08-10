@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 
 app = Flask(__name__) #Create Flask object
 
@@ -16,9 +16,13 @@ JOBS = [
         "salary": "8,000$"
     }
 ]
-@app.route('/', methods = ["GET"]) #Home page
+@app.route("/", methods = ["GET"]) #Home page
 def hello_origin():
     return render_template("home.html", jobs = JOBS)
+
+@app.route("/api/jobs")
+def list_jobs():
+    return jsonify(JOBS)
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port = 5000, debug=True) #Debug=True means it will update in every change

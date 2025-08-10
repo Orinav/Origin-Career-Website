@@ -39,9 +39,10 @@
     </style>
 </head>
 <body>
+    {% include "nav.html" %}
     <div id = "container">
-        <h1>Open Careers</h1>
-        <img id = "banner" src = "http://localhost:63342/PythonProject/static/career.jpg">
+        <h1>Origin</h1>
+        <img id = "banner" src = "{{ url_for('static', filename='career.jpg') }}">
         <h2>About Us</h2>
         <p class = "bodytext">
             Welcome to Origin – Where Careers Begin
