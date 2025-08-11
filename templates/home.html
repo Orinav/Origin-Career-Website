@@ -17,6 +17,7 @@
             width: 100%;
             height: 360px;
             object-fit: cover;
+            margin-bottom: 16px;
         }
 
         h2 {
@@ -40,10 +41,9 @@
 </head>
 <body>
     {% include "nav.html" %}
+    <img id = "banner" src = "{{ url_for('static', filename='career.jpg') }}">
     <div id = "container">
         <h1>Origin</h1>
-        <img id = "banner" src = "{{ url_for('static', filename='career.jpg') }}">
-        <h2>About Us</h2>
         <p class = "bodytext">
             Welcome to Origin – Where Careers Begin
             At Origin, we believe every career has a starting point — and we're here to help you find yours.
@@ -57,9 +57,9 @@
             {% endfor %}
         </p>
         <div style = "text-align:center;">
-        <button>Contact Us</button>
-        <p>Copyright 2025, Origin</p>
+        <a class = "btn btn-primary btn-lg" href = "mailto:orinave10@gmail.com"> Contact Us</a>
         </div>
     </div>
+    {% include "footer.html" %}
 </body>
 </html>
